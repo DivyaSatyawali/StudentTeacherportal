@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="in">
+    <div>
+      <mat-card class="fm">
+
+        <form #AssignmentForm="ngForm">
+          <div class="form-feilds" id="form-feilds">
+            <div>
+              <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput name="title" [(ngModel)]="assignment.title" type="username" required>
+                <mat-error>Please enter a title</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Prerequisite</mat-label>
+                <input matInput name="prerequisite" [(ngModel)]="assignment.prerequisite" type="text" required>
+                <mat-error>Please enter a Prerequisite</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input matInput name="description" [(ngModel)]="assignment.description" type="text" required>
+                <mat-error>Please enter a description</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Submission details</mat-label>
+                <input matInput name="submission_message" [(ngModel)]="assignment.submission_message" type="text" required>
+                <mat-error>Please enter a Submission details</mat-error>
+              </mat-form-field>
+
+              <button  mat-raised-button type="button" (click)="filePicker.click()" color="primary">Upload</button>
+
+              <input style="display: none;" type="file" #filePicker name="pdf" accept="application/pdf" (change)="onPdfPicked($event.target.files)"
+                required />
+
+            </div>
+          </div>
+          <div class="btn-group">
+
+
+            <button mat-raised-button [disabled]="AssignmentForm.invalid" (click)="AssignmentForm.valid && isFilesUploaded() && onSubmit()" color="primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

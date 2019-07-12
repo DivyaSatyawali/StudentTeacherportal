@@ -1,0 +1,23 @@
+<div>
+  <h1 class="star-performer__title">SELECT {{monthArr[month]}} STAR PERFORMER</h1>
+
+  <div class="star-performer">
+
+    <div class="star-performer__card" *ngFor="let user of enrollments">
+      <div class="star-performer__header">
+        <div class="star-performer__username">{{ user.username}}</div>
+        <div>
+          <button class="star-performer__button">Make <i class="fas fa-star"></i> Performer</button>
+        </div>
+      </div>
+      <div class="star-performer__details">
+        <div><i class="fas fa-envelope"></i> {{ user.email}}</div>
+        <div><i class="fas fa-mobile-alt"></i> {{ user.phone}}</div>
+        <div><i class="fas fa-graduation-cap"></i> {{ user.year}}</div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

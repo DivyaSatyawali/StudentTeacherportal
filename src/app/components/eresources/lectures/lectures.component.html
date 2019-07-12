@@ -1,0 +1,81 @@
+<div class="main">
+  <div class="in">
+    <div>
+      <mat-card class="fm">
+
+        <form #LectureForm="ngForm">
+          <div class="form-feilds" id="form-feilds">
+            <div>
+              <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput name="title" type="username" [(ngModel)]="lecture.title" required>
+                <mat-error>Please enter a title</mat-error>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput name="date" type="username" [(ngModel)]="lecture.date" required>
+                <mat-error>Please enter a Date</mat-error>
+              </mat-form-field> -->
+              <mat-form-field>
+                <mat-label>Prerequisite</mat-label>
+                <textarea matInput placeholder="Prerequisite" [(ngModel)]="lecture.prerequisite"
+                  name="prerequisite"></textarea>
+                <input style="display:none" [(ngModel)]="lecture.prerequisite" name="prerequisite" type="text" required>
+                <mat-error>Please enter a Prerequisite</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Description" [(ngModel)]="lecture.description"
+                  name="discription"></textarea>
+                <input style="display:none" [(ngModel)]="lecture.description" name="description" type="username"
+                  required>
+                <mat-error>Please enter a Discription</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Instructor</mat-label>
+                <input matInput [(ngModel)]="lecture.instructor" disabled name="instructor" type="username" required>
+                <mat-error>Please enter a Instructor</mat-error>
+              </mat-form-field>
+              <div class="uploads">
+              <div class="btn-grp">
+                <div >
+                  <div>
+                <button mat-raised-button type="button" (click)="filePicker.click()" color="primary">Upload
+                  Thumbnail</button>
+                </div>
+                <div class="thumbnail__msg">
+                  Thumbnail Size 16:9 ratio
+                </div>
+                <input style="display: none;" type="file" #filePicker accept="image/*"
+                  (change)="onImagePicked($event.target.files)" required />
+                </div>
+                <div>
+                <button mat-raised-button type="button" style="margin-left:1rem;" (click)="videoPicker.click()" color="primary">Upload
+                  Lecture</button>
+                
+                <input style="display: none;" type="file" #videoPicker accept="video/*"
+                  (change)="onVideoPicked($event.target.files)" required />
+                </div>
+              </div>
+              <div style="padding: 1rem 0">
+                <img height="90px" width="160px" *ngIf="(thumbnailUrl!=null && !videoUrl)" [src]="thumbnailUrl">
+                <video  height="90" controlslist="nodownload" tabindex="-1" width="160" [src]="videoUrl"   controls *ngIf="videoUrl!=null" [poster]="thumbnailUrl">
+                  <!-- <source  [src]="videoUrl" type="video/mp4"> -->
+                  
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button mat-raised-button [disabled]="LectureForm.invalid" (click)="LectureForm.valid && isFilesUploaded() && onSubmit()" color="primary" type="submit">Submit</button>
+          </div>
+
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

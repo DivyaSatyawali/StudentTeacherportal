@@ -1,0 +1,110 @@
+<mat-toolbar color="white">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <span><a href="https://iosd.tech" class="logo"></a></span>
+  <span class="spacer"></span>
+  <a class="link">Page 1</a>
+  <a class="link">Page 2</a>
+  <a class="link">Page 3</a>
+  <a class="button" *ngIf="route.snapshot && route.snapshot._routerState.url == '/'"  routerLink="/">Login</a>
+  <a class="button" *ngIf="route.snapshot && route.snapshot._routerState.url != '/'" (click)="logout()">Logout</a>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+  
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-nav-list>
+
+        <div (click)="showEnrollments()">
+            <a mat-list-item ><i class="fas fa-user-plus"></i><span style="margin-left: 9px"></span>
+              Enrollment</a>
+          </div>
+          <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEnrollments}">
+            <a mat-list-item class="sublink" routerLink="/enrollment">
+
+              
+              <div>New Enrollments</div>
+            </a>
+    
+          </div>
+          <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEnrollments}">
+              <a mat-list-item class="sublink" routerLink="/all-enrollment">
+                <div>All Enrollments</div>
+              </a>
+          </div>
+     
+
+
+      <div (click)="showEvents()">
+        <a mat-list-item><i class="far fa-calendar-alt"></i><span style="margin-left: 9px"></span>
+          Event</a>
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEvents}">
+        <a mat-list-item class="sublink" routerLink="/event">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Events</div>
+        </a>
+
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEvents}">
+        <a class="sublink" mat-list-item routerLink="/addevent">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Add Event</div>
+        </a>
+
+      </div>
+      <div (click)="showReimbursement()">
+        <a mat-list-item><i class="fas fa-rupee-sign"></i> <span style="margin-left: 9px"></span>Reimbursement</a>
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenReimbursement}">
+        <a mat-list-item class="sublink" routerLink="/apply">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Apply</div>
+        </a>
+
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenReimbursement}">
+        <a class="sublink" mat-list-item routerLink="/track">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Track</div>
+        </a>
+
+      </div>
+      <div (click)="showEResources()">
+        <a mat-list-item ><i class="far fa-file"></i> <span style="margin-left: 9px"> </span> E-resource
+          portal upload</a>
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}">
+        <a mat-list-item class="sublink" routerLink="/lectures">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Lectures</div>
+        </a>
+
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}">
+        <a mat-list-item class="sublink" routerLink="/modules">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Modules</div>
+        </a>
+
+      </div>
+      <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}">
+        <a mat-list-item class="sublink" routerLink="/assignments">
+          <div><i class="fas fa-money-check-alt"></i></div>
+          <div>Assignments</div>
+        </a>
+
+      </div>
+      <a mat-list-item routerLink="/star-performer"><i class="fas fa-star"></i><span style="margin-left: 9px"></span> Star performer of
+        the month</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,91 @@
+.card {
+	/*card functionality*/
+	perspective: 100rem;
+	-moz-perspective: 150rem;
+	position: relative;
+	border-radius: .5rem;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.2);
+	/*front side styling*/ }
+
+.card__details{
+	padding: 2rem;
+	font-family: 'gothumLight';
+
+}
+.card__event{
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.card__title{
+	font-family: 'gothumLight';
+
+	font-size: 1.6rem;
+	margin:0;
+	font-weight: 900;
+	margin: 0 0 1rem 0;
+}
+
+.card__sub-title{
+	display: flex;
+	
+}
+.card__sub-title > *{
+	flex:1;
+}
+
+.card__poster{
+	height: 15rem;
+	/* //background-origi; */
+	background-position: center;
+	background-size: cover;
+}
+
+.card__description{
+	padding: 1rem 0;
+	font-size: 14px;
+	color:rgb(159, 159, 159)
+}
+
+.event__type{
+	background: #00bfff;
+	padding:.2rem 1rem;
+	color:#fff;
+	
+	margin:0 .5rem 0 0.5rem;
+	border-radius: 10rem;
+}
+.highlight{
+
+	font-weight: 900 !important;
+}
+
+.card__type{
+margin-left: 1rem;
+}
+
+.card__options{
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: all .2s;
+}
+.card:hover .card__options{
+	opacity: 1;
+}
+.card__option{
+	display: block;
+
+	color: #fff;
+	background: linear-gradient(to right, #56ccf2, #2f80ed);
+	margin:.5rem;
+	height: 5rem;
+	width: 5rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

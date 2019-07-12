@@ -1,0 +1,97 @@
+<div class="main">
+  <div class="in">
+    <div>
+      <mat-card class="fm">
+
+        <form class="event-form" #EventForm="ngForm" (submit)="EventForm.valid && (isImage || isUpdating) && onSubmit()" name="event_form">
+          <div class="form-feilds" id="form-feilds">
+            <div>
+              <mat-form-field>
+                <mat-label>Event Title</mat-label>
+                <input matInput [(ngModel)]="event.title" name="event_title" type="text" required>
+                <mat-error>Please enter a Event Title</mat-error>
+              </mat-form-field>
+              <mat-form-field *ngIf="event">
+                <mat-label>Organisating Chapter</mat-label>
+                <input matInput disabled [(ngModel)]="event.chapter"  name="chapter"  type="text" required>
+                <mat-error>Please enter a Organisating Chapter</mat-error>
+
+                <!-- <mat-select [(ngModel)]="event.organisating_chapter" name="chapter">
+                  <mat-option *ngFor="let chapter of chapterList" [value]="chapter">
+                    {{chapter}}
+                  </mat-option>
+                </mat-select> -->
+              </mat-form-field>
+
+
+              <mat-form-field>
+                <input matInput [(ngModel)]="event.date" name="event_date" [matDatepicker]="picker"
+                  placeholder="MM/DD/YYYY">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <input atp-time-picker placeholder="Time" name="time" [(ngModel)]="event.time" [value]="event.time"
+                style="border: none;outline:none;border-bottom:1px solid #b1b1b1;width: 100%;margin:1rem 0;" />
+              <mat-form-field>
+                <mat-label>Link</mat-label>
+                <input matInput name="link" [(ngModel)]="event.link" type="text" required>
+                <mat-error>Please enter a link</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Event Type</mat-label>
+                <mat-select [(ngModel)]="event.eventType" name="type">
+                  <mat-option value="SIG">
+                    SIG
+                  </mat-option>
+                  <mat-option value="Workshop">
+                    Workshop
+                  </mat-option>
+                  <mat-option value="Fest">
+                    Fest
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Event Description</mat-label>
+                <textarea matInput
+                  placeholder="Description"
+                  name="description"
+                  [(ngModel)]="event.description"
+                  ></textarea>
+                <input matInput  style="display:none"  name="description" placeholder="Description" [(ngModel)]="event.description" type="text"
+                  required>
+                <mat-error>Please enter a Event Description</mat-error>
+              </mat-form-field>
+
+              <div class="btn-group">
+
+                <div >
+                  <button style="width: 90%" mat-raised-button type="button" (click)="filePicker.click()" color="primary">Upload
+                    Poster</button>
+
+                  <input style="display: none;" type="file" #filePicker accept="image/*" (change)="onImagePicked($event.target.files)"
+                    required />
+                </div>
+
+                <div >
+
+                  <button *ngIf="!isUpdating" style="width: 90%" mat-raised-button [disabled]="!EventForm.valid" type="submit" color="primary">ADD EVENT</button>
+                  <button *ngIf="isUpdating" style="width: 90%" mat-raised-button [disabled]="!EventForm.valid" type="submit" color="primary">UPDATE EVENT</button>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+
+      </mat-card>
+    </div>
+    <div>
+      <app-event-card [event]="event"></app-event-card>
+    </div>
+  </div>
+</div>

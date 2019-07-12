@@ -1,0 +1,61 @@
+.star-performer{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.star-performer__title{
+    text-transform: uppercase;
+    font-weight: 900;
+    background:  linear-gradient(to top left,rgb(27,150,241) 0%,#91EAE4 100%);
+    -webkit-background-clip: text;
+    color:transparent;
+    padding: 1rem;
+   
+}
+
+.star-performer__card{
+    background: #fff;
+    padding: 1rem 3rem 2rem 3rem;
+    margin: 1rem;
+    border-left:4px solid rgb(27,150,241);
+    box-shadow: .4rem 2rem 3rem rgba(0,0,0,.2);
+
+}
+
+.star-performer__username{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+   
+    background:  linear-gradient(to top right,rgb(27,150,241) 0%,#91EAE4 100%);
+    -webkit-background-clip: text;
+    color:transparent;
+}
+
+.star-performer__details{
+    display: flex;
+    justify-content: space-between;
+    color:rgb(27,150,241);
+}
+
+.star-performer__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+.star-performer__button{
+    padding: 1rem;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    border:none;
+    border-radius: 100rem;
+    color: #fff;
+    transition: all .2s;
+    outline:none;
+}
+
+.star-performer__button:hover{
+    box-shadow:0 0.5rem 2rem rgb(27,150,241);
+}

@@ -1,0 +1,65 @@
+.tracks{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 2rem;
+    grid-gap: 2rem;
+    
+}
+
+.sent{
+    border-left: 4px solid rgba(47, 128, 237,1);
+}
+.sent .track-card__title{
+    color:rgba(47, 128, 237,1);
+}
+.seen{
+    border-left: 4px solid #c2fb2b;
+}
+
+.seen .track-card__title{
+    color: #c2fb2b;
+}
+
+.confirmed{
+    border-left: 4px solid #06fd6b;
+
+}
+.confirmed .track-card__title{
+    color:#06fd6b;
+}
+.denied{
+    border-left: 4px solid #b63a47;
+}
+
+.denied .track-card__title{
+    color:#b63a47;
+}
+.track-card{
+    background: #fff;
+    padding: 4rem;
+    height: 25rem;
+    box-shadow: .4rem 2rem 4rem rgba(0,0,0,.2);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.track-card__title{
+    font-weight: 900;
+    font-family: 'gothumLight' !important;
+    letter-spacing: .1rem;
+
+   
+}
+
+.track-card__description{
+    color:rgb(159, 159, 159);
+    font-size: 12px;
+    flex:1;
+}
+
+.track-card__option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

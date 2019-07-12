@@ -1,0 +1,79 @@
+<div class="main">
+  <div class="in">
+    <form #ReimbursementForm="ngForm" (submit)='ReimbursementForm.valid && isfileToUpload() && onSubmit()' class="form"
+      *ngFor="let form of AppliedForms; let i = index">
+      <mat-card class="fm">
+        <div>
+
+
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput name="username"  [(ngModel)]="form.name" type="username"
+              required>
+            <mat-error>Please enter a Name</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input matInput name="amount"  [(ngModel)]="form.amount" type="username"
+              required>
+            <mat-error>Please enter a amount</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <mat-label>Event Name</mat-label>
+            <!-- <input matInput name="event_ame"  [(ngModel)]="form.event" type="username"
+              required> -->
+              <mat-select [(ngModel)]="form.event_name"name="event">
+                <mat-option *ngFor="let event of events" [value]="event">
+                  {{event}}
+                </mat-option>
+              </mat-select>
+            <mat-error>Please enter a Event Name</mat-error>
+          </mat-form-field>
+          <mat-form-field style="padding:1rem 0">
+            <textarea matInput
+            placeholder="Description"
+           
+            name="description"
+            
+            [(ngModel)]="form.description"
+            
+            ></textarea>
+            <input style="display:none" matInput name="description"  [(ngModel)]="form.description" type="test"
+            required>
+            <mat-error>Please enter a Description</mat-error>
+          </mat-form-field>
+
+          <div class="upload__bill" >
+            <div>
+
+            </div>
+            <div>
+              <button mat-raised-button type="button" (click)="filePicker.click()" color="primary">Upload Bill</button>
+
+              <input type="file" #filePicker accept="image/*" multiple (change)="onImagePicked($event.target.files)" required />
+            </div>
+          </div>
+        </div>
+
+      </mat-card>
+      <div class="options">
+          <div class="add" >
+          <button  [disabled]="!ReimbursementForm.valid" mat-raised-button  type="submit" color="primary">SAVE</button>
+        </div> 
+        <!-- <div class="add" >
+
+          <button type="submit" color="primary" [disabled]="!ReimbursementForm.valid" type="submit"
+            class="btn">+</button>
+        </div>
+        <div class="add" (click)="removeForm(i)">
+          <button class="delete" class="btn"><i class="fas fa-trash"></i></button>
+        </div> -->
+
+      </div>
+    </form>
+  </div>
+</div>

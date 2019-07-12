@@ -1,0 +1,75 @@
+<!--<div class="backy navi">
+<nav class="navbar">
+  <div class="container-fluid navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+       <div class="ham" *ngIf="active2">
+        <a (click)="openSidenav()">
+      &#9776;
+    </a>
+    </div>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="https://iosd.tech" class="logo" [ngClass]="{'resize':active}"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li> 
+        <li><a href="#">Page 3</a></li> 
+      
+        <li><a class="button" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+<div style="width:100%">
+<div class="sidenav" [ngClass]="{'open':active,'default':active1}">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div style="margin-top: 0px">
+  <div class="block" (click)="closeNav()"><a routerLink="/enrollment"><div><i class="fas fa-user-plus"></i></div><div> ENROLLMENT</div> </a></div>
+  <div class="block" (click)="closeNav()">
+  <a href="#" routerLink="/event" ><div><i class="far fa-calendar-alt"></i></div><div>EVENT</div></a>
+  </div>
+  <div class="block" (click)="showReimbursement()">
+  <a ><div><i class="fas fa-money-check-alt"></i></div><div>REIMBURSEMENT</div></a>
+
+</div>
+<div class="block dropdown-item" [ngClass]="{'hidden-dropdown':hiddenReimbursement}" >
+  <a routerLink="/apply"><div><i class="fas fa-money-check-alt"></i></div><div>APPLY</div></a>
+
+</div>
+<div class="block dropdown-item" [ngClass]="{'hidden-dropdown':hiddenReimbursement}" >
+  <a routerLink="/track"><div><i class="fas fa-money-check-alt"></i></div><div>TRACK</div></a>
+
+</div>
+  <div class="block"  (click)="showEResources()">
+  <a ><div><i class="far fa-file"></i></div><div>  E-RESOURCE PORTAL UPLOAD</div></a>
+</div>
+<div class="block dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}" >
+  <a routerLink="/lectures"><div><i class="fas fa-money-check-alt"></i></div><div>LECTURES</div></a>
+
+</div>
+<div class="block dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}" >
+  <a routerLink="/modules"><div><i class="fas fa-money-check-alt"></i></div><div>MODULES</div></a>
+
+</div>
+<div class="block dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}" >
+  <a routerLink="/assignments"><div><i class="fas fa-money-check-alt"></i></div><div>ASSIGNMENTS</div></a>
+
+</div>
+<div class="block" (click)="closeNav()">
+  <a href="#"><div>STAR PERFORMER OF THE WORLD</div></a>
+</div>
+</div>
+</div>
+<router-outlet ></router-outlet>
+</div>
+-->
+<app-main-nav></app-main-nav>

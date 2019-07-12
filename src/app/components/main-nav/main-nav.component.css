@@ -1,0 +1,104 @@
+mat-toolbar {
+	box-shadow: 0 0 25px 0px rgba(0,0,0,0.1)!important;
+	background-color: white;
+	height: 10vh;
+}
+.sidenav-container {
+  height: 90vh;
+  
+}
+
+.sidenav {
+  width: 250px;
+  box-shadow:2px 4px 20px rgba(0,0,0,0.2);
+ overflow: hidden !important;
+  /*top:65px;*/
+}
+.hidden-dropdown{
+      display: none;
+    }
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+mat-list-item {
+	font-family: gothumLight;
+	font-size:15px;
+	color:grey;
+}
+.logo {
+    	display:block;
+    	width:10rem;
+    	height:3rem;
+    	margin-top: 9px;
+    	margin-left: 20px;
+    	background : url("../../../assets/IOSD-logo.png") no-repeat center center/100%;
+}
+.spacer {
+	flex:1 1 auto;
+}
+.button{
+    padding:5px 20px;
+    background:linear-gradient(-90deg,rgb(27,150,241) 0%,#91EAE4 100%);
+    border-radius: 10rem;
+    font-size:10px;
+    margin-top: 3px;
+    color:white;
+    font-family: gothumLight;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear
+}
+
+.button:hover {
+     
+     box-shadow: 0 0.5rem 2rem rgb(27,150,241);
+     text-decoration: none; 
+}
+.link{
+	font-size:16px;
+	font-family: gothumLight;
+	color:grey;
+	margin-right:20px 
+}
+.link:hover{
+	cursor: pointer;
+	color:black;
+	text-decoration: none;
+}
+mat-nav-list{
+	padding-left: 10px;
+}
+mat-nav-list>a{
+	font-family: gothumLight;
+	margin-top:20px;
+	margin-bottom: 20px;
+
+}
+mat-nav-list>a:hover{
+	color: blue;
+}
+mat-nav-list>div>a{
+	font-family: gothumLight;
+	margin-top:20px;
+	margin-bottom: 20px;
+
+}
+mat-nav-list>div>a:hover{
+	color: blue;
+}
+.sublink {
+	margin-left:20px;
+	font-family: gothumLight;
+}
+.border{
+	border:1px solid  blue;
+}
+
+

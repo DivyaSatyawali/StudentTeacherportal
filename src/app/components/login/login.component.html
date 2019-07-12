@@ -1,0 +1,33 @@
+<div class="main">
+	<div class="card">
+		<div class="head">
+			<h3>LOGIN : Step into the world of coding</h3>
+		</div>
+		<div class="line">
+		</div>
+		<div class="for">
+		<form (submit)="onSubmit()" >
+			<div class="U"><div class="field1">	
+			<div><i class="fas fa-user"></i></div>
+			<div><input type="text" id="uname" name="username" [(ngModel)]="username"  placeholder="Username"></div>
+		   </div>
+		    </div>
+            <div class="U"><div class="field1">	
+			<i class="fas fa-key"></i>
+			<input type="password" id="password" name="password" [(ngModel)]="password"  placeholder="Enter Password"><br>
+			
+			</div>
+			<p style="font-size: 14px;color: red;">{{errorMessage}}</p> 
+		    </div>
+		   <div class="check" >
+				<mat-slide-toggle [color]="color">Remember me</mat-slide-toggle>
+		   	<!-- <input type="checkbox" name="value" value="Yes"><span style="padding:0 1rem;letter-spacing:.2rem;font-size: 12px" >Remember me</span><br> -->
+		   </div>
+		   <div><button class="button" type="submit">Login</button>
+		   </div>
+		</form>
+		<p style="margin-top:20px;font-size: 12px;letter-spacing:.2rem">Ohh! Forgot contact admin</p>
+		<a style="display: inline-block; font-size:12px;letter-spacing:.2rem;color: black;" href="mailto:contact@iosd.tech" target="_top"><p>@ iosd.tech</p></a>
+	</div>
+	</div>
+</div>

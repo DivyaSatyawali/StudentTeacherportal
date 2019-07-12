@@ -1,0 +1,39 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@font-face {
+  font-family: gothumLight;
+  src: url(assets/GothamLight.ttf) format("opentype");
+}
+
+html,body{
+	height:100%;
+}
+.mat-card{
+	border-left:4px solid #2f80ed;
+	border-radius: 0 !important;
+	overflow: hidden;
+	padding:0 0 1rem 0;
+
+}
+.mat-drawer-inner-container{
+	overflow: hidden !important;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+}
+
+#time-picker-wrapper.active{
+	overflow: auto !important;
+}
+::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: linear-gradient(to bottom,rgb(27,150,241) 0%,#91EAE4 100%);; 
+  }

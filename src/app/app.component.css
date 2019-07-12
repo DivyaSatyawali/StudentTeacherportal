@@ -1,0 +1,215 @@
+.navi {
+
+	border-radius: 0px;
+	box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1) !important;
+
+}
+.navbar{
+  margin:0 !important;
+}
+@media (min-width: 768px){
+.navbar-nav {
+    float: initial;
+    margin: 0;
+    display: flex;
+  
+}
+.navbar-container{
+  display: flex;
+  align-items: center;
+  max-height: 10vh;
+}
+.navbar-container #myNavbar{
+  flex:1;
+}
+.navbar-header{
+
+}
+.navbar-right{
+  justify-content: flex-end;
+}
+#myNavbar{
+  display: flex !important;
+  justify-content: space-between;
+}
+#myNavbar ul{
+ flex:1
+}
+}
+.ham {
+
+	float : left;
+  font-size:20px;
+  padding-left: 20px
+}
+
+.ham a{ 
+  text-decoration: none;
+ }
+ .ham a:hover{
+  cursor:pointer;
+ }
+
+
+.sidenav {
+  height: 90vh;
+  width:0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  top:50px;
+  box-shadow: .4rem 2rem 4rem rgba(0,0,0,.2);
+  z-index:1; 
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 30px;
+  background-color:#fff;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+.default {
+	width:0px;
+	top:50px;
+}
+.open {
+	width:275px;
+	top:50px;
+}
+.open a{
+  font-size: 12px !important;
+  display: flex;
+}
+
+.open a div{
+  padding: 0 .5rem;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: -5px;
+  right: 25px;
+  color:black;
+  font-size: 25px !important;
+  margin-left: 50px;
+}
+
+.button{
+    padding: 0.8rem 0.8rem;
+    background:linear-gradient(-90deg,#1b96f1 0%,#91EAE4 100%);
+    border-radius: 2rem;
+    margin-top: 3px;
+    display: inline-block;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.2s linear;
+    color:#fff;
+}
+
+.button:hover {
+     transform: translate(0, -0.2rem); 
+     box-shadow: .4rem .7rem 2rem rgba(0,0,0,.2); 
+}
+.btn {
+      padding: 0.5rem;
+      margin-top: 3px;
+      cursor:pointer;
+      display: inline-block;
+      color: #260b44;
+      border-radius: .27rem;
+      font-size: 0.77rem;
+      /* background: #00bfff; */
+      background:
+        linear-gradient(to left top, rgb(27, 150, 241 ) 0%/*bottom-right color*/, #91EAE4 100% /*top-left color*/);
+      color: #fff;
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear
+    }
+    .logo {
+    	display:block;
+    	width:10rem;
+    	height:3rem;
+    	margin-top: 9px;
+    	margin-left: 20px;
+    	background : url("../assets/IOSD-logo.png") no-repeat center center/100%;
+    }
+    .btn:hover {
+      transform: translate(0, -0.7rem);
+      /* border: 3px solid transparent; */
+      box-shadow: 0 0.85rem 2.6rem rgba(38, 11, 68, 0.35)
+    }
+    .btn.active {
+      /* transform: translate(0, -0.7rem);
+      box-shadow: 0 0.85rem 2.6rem rgba(38, 11, 68, 0.35); */
+      /* background: #e2e2e2; */
+      background: 
+        linear-gradient(to left top, #D9E4F5 0%, #F5E3E6 100%);
+      color: #000000;
+    }
+    .block{
+      width:100%;
+      text-align:left;
+      font-family:gothumLight;
+      font-size:14px;
+      color:#938888;
+      padding-top: 20px;
+      padding-bottom:20px;
+      padding-left:20px;
+        }
+    .block:hover{
+      background-color: white;
+      box-shadow: 6px 0 15px -4px rgba(31,73,125,0.2), -6px 0 8px -4px rgba(31,73,125,0.2);
+      color:black;
+    }
+    .block a {
+      font-size: 15px;
+    }
+    .block a:hover{
+      color:black;
+    }
+
+    .hidden-dropdown{
+      display: none;
+    }
+
+    .dropdown-item{
+      padding-left: 5rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom,rgb(27,150,241) 0%,#91EAE4 100%);; 
+    }
+    
+    /* Handle on hover */
+    /* ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+ */
+
+
+   /* CARDS */
+
+   

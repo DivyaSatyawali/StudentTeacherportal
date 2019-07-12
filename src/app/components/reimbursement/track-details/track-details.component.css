@@ -1,0 +1,42 @@
+.active-track{
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 999 ;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    right: 0;
+    
+}
+
+.active-track__card{
+    color: red;
+    
+    background: #fff;
+    height: 40rem;
+    width: 60rem;
+   
+    padding: 2rem;
+
+   
+}
+
+.active-track__title{
+    font-size: 3rem;
+    font-weight: 900;
+
+}
+
+.active-track__images{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
+}
+.active-track__images img{
+    width: 200px;
+   /* height: 100%; */
+}

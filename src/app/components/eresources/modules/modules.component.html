@@ -1,0 +1,42 @@
+<div class="main">
+    <div class="in">
+      <div>
+        <mat-card class="fm">
+          
+          <form #ModuleForm="ngForm" name="module_form" >
+            <div class="form-feilds" id="form-feilds">
+
+              <div>
+                <mat-form-field >
+                  <mat-label>Title</mat-label>
+                  <input matInput name="username" [(ngModel)]="modules.title"  type="username" required>
+                  <mat-error>Please enter a title</mat-error>
+                </mat-form-field>
+               
+                <mat-form-field >
+                  <mat-label>Prerequisite</mat-label>
+                  <input matInput name="prerequisite" [(ngModel)]="modules.prerequisite" type="username" required>
+                  <mat-error>Please enter a Event Name</mat-error>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Description</mat-label>
+                    <input matInput name="description" [(ngModel)]="modules.description" type="description" required>
+                    <mat-error>Please enter a Event Name</mat-error>
+                  </mat-form-field>
+                 
+              
+              <button  mat-raised-button type="button" (click)="filePicker.click()" color="primary">Upload</button>
+
+              <input style="display: none;" type="file" #filePicker name="pdf" accept="application/pdf" (change)="onPdfPicked($event.target.files)"
+                required />
+              </div>
+            </div>
+            <div class="btn-group">
+  
+              <button mat-raised-button [disabled]="ModuleForm.invalid" (click)="ModuleForm.valid && isFilesUploaded() &&  onSubmit()" color="primary" type="submit">Submit</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>

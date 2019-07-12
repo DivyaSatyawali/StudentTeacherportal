@@ -1,0 +1,34 @@
+<div  class="tracks">
+  <div *ngFor="let reimbursement of allReimbursement;let i = index"  class="track-card " [ngClass]="[getClassForStatus(i)]">
+    <p class="track-card__title">{{ reimbursement.eventName }}</p>
+    <p class="track-card__amount">RS {{ reimbursement.amount }}</p>
+    <p class="track-card__description">{{ formatDescription(reimbursement.description) }}</p>
+    <div class="track-card__option">
+    <p class="track-card__username">By {{ reimbursement.name }}</p>
+      <div>
+        <button  mat-raised-button (click)="openDialog(i)" color="primary">SHOW MORE</button>
+      </div>
+    </div>
+    <!-- <app-track-details *ngIf="(activeTrack === i)" [reimbursement]="reimbursement"></app-track-details> -->
+
+  </div>
+  <!-- <div class="track-card seen">
+    <p class="track-card__title">CARDS EVENT NAME</p>
+    <p class="track-card__amount">RS 10.00</p>
+    <p class="track-card__description">Today, we will take a deeper dive into how you can write effective descriptions for your Google AdWords ads. The purpose of any description in your AdWords ads should be to both attract the right audience and deter the wrong audience.</p>
+    <p class="track-card__username">By Roopam Garg</p>
+
+  </div>
+  <div class="track-card confirmed">
+    <p class="track-card__title">CARDS EVENT NAME</p>
+    <p class="track-card__amount">RS 10.00</p>
+    <p class="track-card__description">Today, we will take a deeper dive into how you can write effective descriptions for your Google AdWords ads. The purpose of any description in your AdWords ads should be to both attract the right audience and deter the wrong audience.</p>
+    <p class="track-card__username">By Roopam Garg</p>
+  </div>
+  <div class="track-card denied">
+    <p class="track-card__title">CARDS EVENT NAME</p>
+    <p class="track-card__amount">RS 10.00</p>
+    <p class="track-card__description">Today, we will take a deeper dive into how you can write effective descriptions for your Google AdWords ads. The purpose of any description in your AdWords ads should be to both attract the right audience and deter the wrong audience.</p>
+    <p class="track-card__username">By Roopam Garg</p>
+  </div> -->
+</div>

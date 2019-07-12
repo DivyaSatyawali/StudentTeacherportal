@@ -1,0 +1,40 @@
+<!-- <div class="active-track" (click)="removeActive()">
+    <div  class="active-track__card">
+        <div   class="">
+          <p  class="active-track__title">{{ reimbursement.eventName }}</p>
+          <p class="active-track__amount">RS {{ reimbursement.amount }}</p>
+          <p class="active-track__description">{{ reimbursement.description }}</p>
+          <div class="active-track__option">
+          <p class="active-track__username">By {{ reimbursement.name }}</p>
+            <div>
+
+              
+            </div>
+          </div>
+
+      
+        </div>
+        <div class="active-track__images">
+        <div *ngFor="let image of reimbursement.bills">
+         
+          <a target="_blank" [href]="refactoredURL(image)"><img [src]="refactoredURL(image)"/></a>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<h1 mat-dialog-title>{{data.eventName}}</h1>
+<div mat-dialog-content>
+  <p>{{ data.description }}</p>
+ 
+</div>
+<div class="active-track__images">
+  <div *ngFor="let image of data.bills">
+   
+    <a target="_blank" [href]="refactoredURL(image)"><img [src]="refactoredURL(image)"/></a>
+  </div>
+</div>
+<div mat-dialog-actions>
+  
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>
