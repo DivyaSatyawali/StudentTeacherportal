@@ -16,6 +16,7 @@
                   <mat-error *ngIf="usernameInput.invalid">Please enter a Name</mat-error>
                 </mat-form-field>
                 <mat-form-field>
+
                   <mat-label>Phone No.</mat-label>
                   <input matInput name="phone" [(ngModel)]="form.phone" #phoneInput="ngModel" type="text"
                     required phone>
@@ -58,11 +59,20 @@
                   <mat-error *ngIf="yearsControl.hasError('required')">Please choose an year</mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                  <mat-label>XYZ</mat-label>
-                  <input matInput name="username" [(ngModel)]="form.username" type="username"
-                    #usernameInput="ngModel" required username>
-                  <mat-error *ngIf="usernameInput.invalid">Please enter a xyz</mat-error>
+                  <mat-label>Role</mat-label>
+                  <input matInput name="role" style="display:none" disabled [(ngModel)]="form.role" type="text"
+                    #roleInput="ngModel" required >
+                    <mat-select  class="" name="role" (ngModelChange)="openDialog()"  [(ngModel)]="form.role"
+                     required>
+  
+                    <mat-option *ngFor="let role of roles" [value]="role">
+                      {{role}}
+
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="roleInput.invalid">Please enter a Role</mat-error>
                 </mat-form-field>
+
                 <div class="image-preview">
                 
                     <a mat-raised-button  color="primary"  *ngIf="form.filename!=null" target="_blank" [href]="form.filename">Download form</a>

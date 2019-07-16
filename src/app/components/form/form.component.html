@@ -56,12 +56,13 @@
 								</mat-select>
 								<mat-error *ngIf="yearsControl.hasError('required')">Please choose an year</mat-error>
 							</mat-form-field>
+							
 							<mat-form-field>
-								<mat-label>XYZ</mat-label>
-								<input matInput name="username" [(ngModel)]="form.username" type="username"
-									#usernameInput="ngModel" required username>
-								<mat-error *ngIf="usernameInput.invalid">Please enter a xyz</mat-error>
-							</mat-form-field>
+								<mat-label>Role</mat-label>
+								<input matInput name="role" disabled [(ngModel)]="form.role" type="text"
+								  #roleInput="ngModel" required username>
+								<mat-error *ngIf="roleInput.invalid">Please enter a Role</mat-error>
+							  </mat-form-field>
 							 <div class="image-preview">
                 
                     <p mat-raised-button  color="primary"  *ngIf="form.filename!=null" >{{form.filename}}</p>

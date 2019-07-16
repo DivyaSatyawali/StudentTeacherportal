@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
 	<div class="card">
 		<div class="head">
 			<h3>LOGIN : Step into the world of coding</h3>
@@ -21,7 +21,7 @@
 		    </div>
 		   <div class="check" >
 				<mat-slide-toggle [color]="color">Remember me</mat-slide-toggle>
-		   	<!-- <input type="checkbox" name="value" value="Yes"><span style="padding:0 1rem;letter-spacing:.2rem;font-size: 12px" >Remember me</span><br> -->
+		   
 		   </div>
 		   <div><button class="button" type="submit">Login</button>
 		   </div>
@@ -30,4 +30,38 @@
 		<a style="display: inline-block; font-size:12px;letter-spacing:.2rem;color: black;" href="mailto:contact@iosd.tech" target="_top"><p>@ iosd.tech</p></a>
 	</div>
 	</div>
+</div> -->
+
+<div class="login-page">
+    <form class="login-card" (submit)="onSubmit()" >
+        <!-- <div class="login-card__icon">
+            <div class="my-icon" aria-label="My icon" [inlineSVG]="'../../assets/logo-blue.svg'"></div>
+        </div> -->
+        <div>
+            <h1 class="login-card__header">LOGIN: Step into the world of IOSD</h1>
+        </div>
+        <div class="login-card__input">
+
+                <i class="login-card__input__icon far fa-user"></i>
+                <input type="text" id="uname" name="username" [(ngModel)]="username"  placeholder="Username" />
+        </div>
+        <div class="login-card__input">
+                <i class="login-card__input__icon fas fa-fingerprint"></i>
+            <input type="password" id="password" name="password" [(ngModel)]="password"  placeholder="Enter Password"/>
+
+        </div>
+        <div class="login-card__check" >
+        <label class="container">
+            <input type="checkbox">Remember me
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="login-card__btn-group" >
+            <button class="login-card__btn" type="submit">Login</button>
+		</div>
+		<div class="login-card__details">
+			<p style="margin-top:20px;font-size: 12px;letter-spacing:.2rem">Ohh! Forgot contact admin</p>
+			<a  href="mailto:contact@iosd.tech" target="_top"><p>contact @ iosd.tech</p></a>
+		</div>
+	</form>
 </div>

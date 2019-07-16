@@ -32,6 +32,8 @@ export class FormComponent implements OnInit {
     this.authService.isUserLoggedIn('/enrollment')
     this.formArray.push(this.formsnumber);
     this.setChapter();
+    this.formArray[this.activeFormIndex].role = "MEMBER"
+
     console.log(this.formArray);
     // this.flagArray.push(true);
     // this.flagArray2.push(true);
@@ -119,6 +121,8 @@ export class FormComponent implements OnInit {
         this.formsnumber = new FS();
         this.formArray.push(this.formsnumber);
         this.setChapter();
+    this.formArray[this.activeFormIndex].role = "MEMBER"
+
       }
 
     } else {
@@ -128,6 +132,8 @@ export class FormComponent implements OnInit {
       this.formArray.push(this.formsnumber);
       this.activeFormIndex = this.formArray.length - 1;
       this.setChapter();
+      this.formArray[this.activeFormIndex].role = "MEMBER"
+
     }
     this.updateScroll();
     // this.flagArray.push(true);

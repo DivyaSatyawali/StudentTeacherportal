@@ -40,4 +40,6 @@ export class AssignmentsComponent implements OnInit {
       this._snackBar.open(data.message, "close", { duration: 5000 });
     });
   }
+
+  
 }

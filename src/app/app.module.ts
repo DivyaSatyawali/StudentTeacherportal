@@ -20,12 +20,14 @@ import { MatButtonModule ,
          MatCheckboxModule,
          MatChipsModule,
          MatSnackBarModule,
-         MatDialogModule
+         MatDialogModule,
+         MatIconModule,
+         
         } from '@angular/material';
 
 import { LoginComponent } from './components/login/login.component';
 import { EventComponent } from './components/event/event.component';
-import {MatIconModule } from "@angular/material/icon";
+
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { ApplyComponent } from './components/reimbursement/apply/apply.component';
@@ -43,6 +45,7 @@ import { AllEnrollmentsComponent } from './components/form/all-enrollments/all-e
 import { CookieService } from 'ngx-cookie-service';
 import { TrackDetailsComponent } from './components/reimbursement/track-details/track-details.component';
 import { StarPerformerComponent } from './components/star-performer/star-performer.component';
+import { RoleChangeWarningComponent } from './components/form/all-enrollments/role-change-warning/role-change-warning.component';
 
 @NgModule({
   
@@ -62,17 +65,18 @@ import { StarPerformerComponent } from './components/star-performer/star-perform
     AllEnrollmentsComponent,
     TrackDetailsComponent,
     StarPerformerComponent,
+    RoleChangeWarningComponent,
     
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule , 
-    MatMenuModule , 
-    MatToolbarModule , 
-    MatIconModule , 
-    MatSidenavModule , 
+    MatCardModule, 
+    MatMenuModule, 
+    MatToolbarModule, 
+    MatIconModule, 
+    MatSidenavModule, 
     MatListModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
@@ -94,6 +98,6 @@ import { StarPerformerComponent } from './components/star-performer/star-perform
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
-  entryComponents: [ TrackDetailsComponent ]
+  entryComponents: [ TrackDetailsComponent,RoleChangeWarningComponent]
 })
 export class AppModule { }

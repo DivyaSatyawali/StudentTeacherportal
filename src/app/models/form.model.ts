@@ -5,8 +5,10 @@ export class FS
 	phone:any;
 	email:any;
 	college:any;
-	year:any;
+	year:string="First";
 	filename:string;
+	role:"MEMBER";
 	isValid?:boolean;
+	
 	message:string;
 }

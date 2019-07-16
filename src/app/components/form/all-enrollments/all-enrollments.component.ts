@@ -1,4 +1,6 @@
-import { AuthService } from './../../../services/auth.service';
+import { RoleChangeWarningComponent } from './role-change-warning/role-change-warning.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from "./../../../services/auth.service";
 import { EnrollmentsService } from "./../../../services/enrollments.service";
 import { Component, OnInit } from "@angular/core";
 import { FS } from "../../../models/form.model";
@@ -18,22 +20,49 @@ export class AllEnrollmentsComponent implements OnInit {
 
   formsnumber = new FS();
   formArray = [];
+  roles = [];
   imgUrl: string;
 
   fileToUpload: File;
   constructor(
     private enrollmentsService: EnrollmentsService,
     private _snackBar: MatSnackBar,
-    private authService:AuthService
+    private authService: AuthService,
+    public dialog: MatDialog,
   ) {}
   ngOnInit() {
-  this.authService.isUserLoggedIn('/all-enrollment');
+    this.authService.isUserLoggedIn("/all-enrollment");
     this.enrollmentsService.getEnrollments().subscribe(data => {
       this.formArray = data;
+      console.log(data);
     });
+    this.setAvailableRoles();
     // this.flagArray.push(true);
     // this.flagArray2.push(true);
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(RoleChangeWarningComponent, {
+      // width: '',
+      data: this.formArray[this.activeFormIndex]
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed");
+    });
+  }
+  setAvailableRoles = () => {
+    this.enrollmentsService.getAllRoles().subscribe(data => {
+      this.roles = data.roles;
+      console.log(data);
+    });
+  };
+
+  changeRoleRequest = (role,i) => {
+    console.log(role)
+    this.openDialog()
+  };
+ 
+
   updateScroll() {
     var element = document.getElementById("main");
     element.scrollTop = element.scrollHeight;
@@ -55,32 +84,6 @@ export class AllEnrollmentsComponent implements OnInit {
     }
     return email && phone;
   };
-  // addNewform()
-  // {
-  //   console.log(this.formArray)
-
-  //  // const isOldForm = this.formArray.filter(form => form.email === this.formArray[this.activeFormIndex].email)
-
-  //  // this.onSignup(this.formArray[this.activeFormIndex],this.activeFormIndex)
-
-  //   if(this.formArray[this.activeFormIndex].isValid){
-  //     console.log("true")
-  //     console.log(this.formsnumber);
-  //     this.formArray[this.activeFormIndex] = this.formsnumber
-  //     this.activeFormIndex += 1;
-  //     if(!this.formArray[this.activeFormIndex]){
-  //       this.formsnumber = new FS();
-  //       this.formArray.push(this.formsnumber);
-  //     }
-  //   }else{
-  //   this.formArray[this.activeFormIndex].isValid = true
-  //   this.formsnumber = new FS();
-  //   this.formArray.push(this.formsnumber);
-  //   this.activeFormIndex= this.formArray.length - 1;
-  //   }
-  //   this.updateScroll()
-  //   // this.flagArray.push(true);
-  // }
   isActive = index => index === this.activeFormIndex;
   removeForm(index) {
     this.enrollmentsService
@@ -103,7 +106,6 @@ export class AllEnrollmentsComponent implements OnInit {
   setActiveForm(i) {
     this.activeFormIndex = i;
     console.log(this.formArray[this.activeFormIndex]);
-
     this.formsnumber = this.formArray[this.activeFormIndex];
     this.fileToUpload = null;
     // this.updateFormsArray();

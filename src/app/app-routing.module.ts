@@ -23,6 +23,7 @@ const routes: Routes = [
   {path:'assignments',component:AssignmentsComponent},
   {path:'addevent',component:AddEventComponent},
   {path:'all-enrollment',component:AllEnrollmentsComponent},
+  {path:'addevent',component:AddEventComponent},
   {path:'event/edit/:id',component:AddEventComponent},
   {path:'star-performer',component:StarPerformerComponent}
 ];

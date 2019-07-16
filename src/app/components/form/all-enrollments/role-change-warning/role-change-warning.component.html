@@ -1,0 +1,9 @@
+<!-- <h1 mat-dialog-title>Hi </h1> -->
+<div mat-dialog-content>
+  <p>Do You Really want to send Request to change {{data.username}} role to {{data.role}}</p>
+ 
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="sendRequest()" cdkFocusInitial>Yes</button>
+</div>
