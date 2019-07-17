@@ -1,3 +1,5 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { StarPerformerService } from './../../services/star-performer.service';
 import { AuthService } from "./../../services/auth.service";
 import { EnrollmentsService } from "./../../services/enrollments.service";
 import { Component, OnInit } from "@angular/core";
@@ -22,7 +24,10 @@ export class StarPerformerComponent implements OnInit {
     "November",
     "December"
   ];
-  constructor(private enrollmentsService: EnrollmentsService,
+  constructor(
+    private StarPerformerService:StarPerformerService,
+    private enrollmentsService: EnrollmentsService,
+    private _snackBar: MatSnackBar,
               private authService:AuthService
     ) {}
   month;
@@ -35,5 +40,14 @@ export class StarPerformerComponent implements OnInit {
       this.enrollments = data;
       console.log(data);
     });
+}
+
+  requestStarPerformer = (id) =>{
+    this.StarPerformerService.requestStarPerformer(id).subscribe(data =>{
+      this._snackBar.open(data.message , "close",{duration: 5000});
+    },err =>{
+      console.log(err)
+      this._snackBar.open(err.error.message , "close",{duration: 5000});
+    })
   }
 }
