@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card" >
     <div class="card__poster" 
     [style.background-image]="'url(' + refactoredURL(event.poster) + ')'">
         <div class="card__options" *ngIf="event._id !== undefined && !isUpdating">
             <div class="card__option" [routerLink]="'edit/'+event._id" ><i class="fas fa-pencil-alt"></i></div>
-            <div class="card__option" (click)="deleteEvent(event._id)"><i class="fas fa-trash"></i></div>
+            <div class="card__option" (click)="openDialog(event._id)"><i class="fas fa-trash"></i></div>
 
         </div>
     </div>

@@ -55,9 +55,11 @@ mat-list-item {
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
-
+i {
+  color:rgba(0,0,0,0.5);
+}
 .button:hover {
-     
+     cursor:pointer;
      box-shadow: 0 0.5rem 2rem rgb(27,150,241);
      text-decoration: none; 
 }

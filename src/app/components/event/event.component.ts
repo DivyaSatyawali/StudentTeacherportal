@@ -2,6 +2,7 @@ import { AuthService } from './../../services/auth.service';
 import { EventsService } from './../../services/events.service';
 import { Component, OnInit } from '@angular/core';
 import { EVENT } from '../../models/event.model';
+import { MissionService } from '../../services/e.service';
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -12,7 +13,7 @@ export class EventComponent implements OnInit {
   picker;
   events ;
   
-  constructor(private eventsService:EventsService,private authService:AuthService) { }
+  constructor(private MS : MissionService,private eventsService:EventsService,private authService:AuthService) { }
 
   ngOnInit() {
     this.authService.isUserLoggedIn('/event')
@@ -20,6 +21,10 @@ export class EventComponent implements OnInit {
     this.eventsService.getEvents().subscribe((data)=>{
       this.events = data 
     })
+    this.MS.missionAnnounced$.subscribe(
+      astronaut => {
+        this.events = this.events.filter(({_id})=>astronaut!== _id)
+      });
     // this.event = {
     //   event_title:"EVENT TITLE",
     //   organisating_chapter:"MAIT",
@@ -36,8 +41,9 @@ export class EventComponent implements OnInit {
   //   this.events = this.events.splice(index,1);
 
   // }
+
  deleteEvent(id){
-    console.log(id)
+    console.log(id);
     this.events = this.events.filter(({_id})=>id!== _id)
     // this.eventsService.deleteEvent(id).subscribe((data)=>{
     //   console.log("done")
@@ -45,4 +51,5 @@ export class EventComponent implements OnInit {
     //   // this.eventComponent.deleteEvent(id)
     // })
   }
-}
+
+} 

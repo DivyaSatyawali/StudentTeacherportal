@@ -5,7 +5,12 @@ import { EventComponent } from '../event.component';
 import { ActivatedRoute, Params } from "@angular/router";
 import {MatSnackBar} from '@angular/material/snack-bar';
 import API_URL from 'src/app/config/API_URL';
-
+import { DeleteModelComponent } from '../delete-model/delete-model.component';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
 @Component({
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
@@ -13,9 +18,7 @@ import API_URL from 'src/app/config/API_URL';
 })
 export class EventCardComponent implements OnInit {
   @Input() event:EVENT;
-  @Output()
-  deleted = new EventEmitter<string>();
-
+  
   // uploadComplete() {
   //   this.uploaded.emit('complete');
   // }
@@ -24,7 +27,7 @@ export class EventCardComponent implements OnInit {
   imgUrl:String;
   isUpdating:boolean = false;
 
-  constructor(private eventsService:EventsService,private route: ActivatedRoute,private _snackBar: MatSnackBar) { 
+  constructor(public dialog: MatDialog,private eventsService:EventsService,private route: ActivatedRoute,private _snackBar: MatSnackBar) { 
   }
 
   ngOnInit() {
@@ -48,15 +51,7 @@ export class EventCardComponent implements OnInit {
     return url.replace("\\","/")
     }
   }
-  deleteEvent(id){
-    console.log(id)
-    this.eventsService.deleteEvent(id).subscribe((data)=>{
-      this.deleted.emit('delete')
-      this._snackBar.open(data.message , "close",{duration: 5000});
-      
-      // this.eventComponent.deleteEvent(id)
-    })
-  }
+
   formatDate(str){
     if(str){
       str = str.toString();
@@ -69,4 +64,15 @@ export class EventCardComponent implements OnInit {
     return newStr;
   }
   }
+   openDialog(id): void {
+    const dialogRef = this.dialog.open(DeleteModelComponent, {
+      // width: '',
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed");
+    });
+  }
+ 
 }

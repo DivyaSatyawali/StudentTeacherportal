@@ -46,7 +46,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { TrackDetailsComponent } from './components/reimbursement/track-details/track-details.component';
 import { StarPerformerComponent } from './components/star-performer/star-performer.component';
 import { RoleChangeWarningComponent } from './components/form/all-enrollments/role-change-warning/role-change-warning.component';
-
+import { DeleteModelComponent } from './components/event/delete-model/delete-model.component';
+import { MissionService } from './services/e.service';
 @NgModule({
   
   declarations: [
@@ -66,6 +67,7 @@ import { RoleChangeWarningComponent } from './components/form/all-enrollments/ro
     TrackDetailsComponent,
     StarPerformerComponent,
     RoleChangeWarningComponent,
+    DeleteModelComponent
     
   ],
   imports: [
@@ -96,8 +98,8 @@ import { RoleChangeWarningComponent } from './components/form/all-enrollments/ro
     MatSnackBarModule,
     MatDialogModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,MissionService],
   bootstrap: [AppComponent],
-  entryComponents: [ TrackDetailsComponent,RoleChangeWarningComponent]
+  entryComponents: [ TrackDetailsComponent,RoleChangeWarningComponent,DeleteModelComponent]
 })
 export class AppModule { }

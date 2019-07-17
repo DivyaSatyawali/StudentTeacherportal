@@ -22,19 +22,19 @@
       </div>
     </div>
 </div> -->
-
-<h1 mat-dialog-title>{{data.eventName}}</h1>
-<div mat-dialog-content>
-  <p>{{ data.description }}</p>
+<div class="head">
+<h1 mat-dialog-title>{{data.eventName}}</h1></div>
+<div mat-dialog-content class="desc">
+  <p >{{ data.description }}</p>
  
 </div>
 <div class="active-track__images">
-  <div *ngFor="let image of data.bills">
+  <div *ngFor="let image of data.bills" class="im">
    
     <a target="_blank" [href]="refactoredURL(image)"><img [src]="refactoredURL(image)"/></a>
   </div>
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions class="bn">
   
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+ <div style="float:right"> <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button></div>
 </div>

@@ -1,7 +1,7 @@
 <div class="section-events">
     <div class="event-card" >
        
-        <app-event-card *ngFor="let event of events;let i = index" (deleted)="deleteEvent(event._id)" [event]="event"></app-event-card>
+        <app-event-card *ngFor="let event of events;let i = index"  [event]="event"></app-event-card>
         
     </div>
 </div>
