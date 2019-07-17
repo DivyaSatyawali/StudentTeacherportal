@@ -12,6 +12,7 @@
          <h3 class="card__title">{{event.title}}</h3>
          <div class="card__sub-title">
              <p class="card__timing"><span class="highlight">Start On</span> {{event.time}}, {{formatDate(event.date)}}</p>
+             <p class="card__timing"><span class="highlight">End On</span> {{event.end_time}}, {{formatDate(event.end_date)}}</p>             
              <p class="card__type">
                  <span class="highlight">Event Type </span>:
                  <span  class="event__type">{{event.eventType}}</span>
@@ -22,7 +23,7 @@
         {{event.description}}     
     </div>
     <div class="card__description">
-          Chapter:{{event.chapter}}     
+        <span class="highlight">Chapter</span> :{{event.chapter}}     
     </div>
     <div>
         <a [href]="'http://'+event.link" target="_blank">Click for Registration</a>

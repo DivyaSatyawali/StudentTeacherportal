@@ -18,10 +18,9 @@ export class EnrollmentsService {
   constructor(private http:HttpClient,private authService:AuthService) { }
  httpOptions = {
     headers: new HttpHeaders({
-
        'authorization': this.authService.getUserToken()
-
     })
+
   };
 
   convertObjectToFormData(form){
@@ -33,7 +32,6 @@ export class EnrollmentsService {
   }
   getEnrollments():Observable<[FS]>{
     return this.http.get<[FS]>(`${API_URL}enrollment/fetch_Chapter_Users`,this.httpOptions);
-     
   }
 
   sendEnrollments(arr){
@@ -53,8 +51,7 @@ export class EnrollmentsService {
   }
   updateEnrollments(form):Observable<FS>{
     const data = this.convertObjectToFormData(form)
-    return this.http.put<FS>(`${API_URL}enrollment/update/${form._id}`,data,this.httpOptions)
-    
+    return this.http.put<FS>(`${API_URL}enrollment/update/${form._id}`,data,this.httpOptions) 
   }
   deleteEnrollment(id):Observable<FS>{
     console.log(id)

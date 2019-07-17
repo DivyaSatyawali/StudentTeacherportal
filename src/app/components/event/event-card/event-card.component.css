@@ -25,13 +25,16 @@
 	font-weight: 900;
 	margin: 0 0 1rem 0;
 }
-
+.card__timing{
+	flex:1;
+}
 .card__sub-title{
-	display: flex;
 	
+	display: flex;
+	justify-content: space-between;
 }
 .card__sub-title > *{
-	flex:1;
+	margin: 1rem .5rem 1rem 0;
 }
 
 .card__poster{
@@ -56,13 +59,22 @@
 	border-radius: 10rem;
 }
 .highlight{
-
+	color: #000;
+	
 	font-weight: 900 !important;
 }
 
 .card__type{
 margin-left: 1rem;
+/* width: 44rem; */
+/* display: flex;
+align-items: center; */
 }
+
+/* .card__type span{
+	display:block;
+	
+} */
 
 .card__options{
 	height: 100%;

@@ -3,7 +3,6 @@
     grid-template-columns: repeat(3,1fr);
     padding: 2rem;
     grid-gap: 2rem;
-    
 }
 
 .sent{
@@ -48,8 +47,6 @@
     font-weight: 900;
     font-family: 'gothumLight' !important;
     letter-spacing: .1rem;
-
-   
 }
 
 .track-card__description{

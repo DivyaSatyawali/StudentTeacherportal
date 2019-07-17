@@ -26,12 +26,20 @@
 
               <mat-form-field>
                 <input matInput [(ngModel)]="event.date" name="event_date" [matDatepicker]="picker"
-                  placeholder="MM/DD/YYYY">
+                  placeholder="Start time : MM/DD/YYYY">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
-              <input atp-time-picker placeholder="Time" name="time" [(ngModel)]="event.time" [value]="event.time"
-                style="border: none;outline:none;border-bottom:1px solid #b1b1b1;width: 100%;margin:1rem 0;" />
+              <mat-form-field>
+                <input matInput [(ngModel)]="event.end_date" name="event_end_date" [matDatepicker]="picker2"
+                  placeholder="End time : MM/DD/YYYY">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+              <input atp-time-picker placeholder="Start time" name="time" [(ngModel)]="event.time" [value]="event.time"
+                style="border: none;outline:none;border-bottom:1px solid #b1b1b1;width: 100%;margin:1rem 0;padding-top:1rem" />
+                <input atp-time-picker placeholder="End time" name="time" [(ngModel)]="event.end_time" [value]="event.end_time"
+                style="border: none;outline:none;border-bottom:1px solid #b1b1b1;width: 100%;margin:1rem 0;padding-top:1rem" />
               <mat-form-field>
                 <mat-label>Link</mat-label>
                 <input matInput name="link" [(ngModel)]="event.link" type="text" required>

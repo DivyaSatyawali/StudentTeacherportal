@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { EventComponent } from '../event.component';
 import { ActivatedRoute, Params } from "@angular/router";
 import {MatSnackBar} from '@angular/material/snack-bar';
+import API_URL from 'src/app/config/API_URL';
 
 @Component({
   selector: 'app-event-card',
@@ -41,8 +42,11 @@ export class EventCardComponent implements OnInit {
 
   }
   refactoredURL(url){
+    if(url.length < 1000){
+      return API_URL.slice(0,API_URL.length - 1) + url.replace("\\","/")
+    }else{
     return url.replace("\\","/")
-    
+    }
   }
   deleteEvent(id){
     console.log(id)

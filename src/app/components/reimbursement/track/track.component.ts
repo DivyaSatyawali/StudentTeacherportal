@@ -34,10 +34,10 @@ export class TrackComponent implements OnInit {
 
   getClassForStatus(i) {
     console.log(this.allReimbursement[i].state);
-    if (this.allReimbursement.state === "applied") return "sent";
-    else if (this.allReimbursement.state === "seen") return "seen";
-    else if (this.allReimbursement.state === "confirmed") return "confirmed";
-    else if (this.allReimbursement.state === "denied") return "denied";
+    if (this.allReimbursement[i].state === "applied") return "sent";
+    else if (this.allReimbursement[i].state === "pending") return "seen";
+    else if (this.allReimbursement[i].state === "accepted") return "confirmed";
+    else if (this.allReimbursement[i].state === "rejected") return "denied";
     else return "sent";
   }
 

@@ -76,15 +76,20 @@ export class AddEventComponent implements OnInit {
       date,
       time,
       link,
+      end_date,
+      end_time,
       eventType,
       description,
     } = this.event;
+    console.log(this.event)
     const event = {
       title: title,
       chapter: chapter,
       date,
       time,
       link,
+      end_date,
+      end_time,
       eventType: eventType,
       description,
       poster: this.fileToUpload

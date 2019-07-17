@@ -1,7 +1,7 @@
 <div  class="tracks">
   <div *ngFor="let reimbursement of allReimbursement;let i = index"  class="track-card " [ngClass]="[getClassForStatus(i)]">
     <p class="track-card__title">{{ reimbursement.eventName }}</p>
-    <p class="track-card__amount">RS {{ reimbursement.amount }}</p>
+    <p class="track-card__amount">RS {{ reimbursement.amount }} ( status : {{ reimbursement.state }} )</p>
     <p class="track-card__description">{{ formatDescription(reimbursement.description) }}</p>
     <div class="track-card__option">
     <p class="track-card__username">By {{ reimbursement.name }}</p>

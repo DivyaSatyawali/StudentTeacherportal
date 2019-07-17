@@ -30,12 +30,7 @@
                   <mat-error *ngIf="emailInput.invalid ">Please enter a valid emaill</mat-error>
                   <!-- <mat-error *ngIf="isUniqueEmail()">Please enter a valid emaill</mat-error> -->
                 </mat-form-field>
-                <div class="">
-                  <button mat-stroked-button type="button" (click)="filePicker.click()">Upload Student
-                    Application Form</button>
-                  <input type="file" #filePicker accept="application/pdf"
-                    (change)="onImagePicked($event.target.files)">
-                </div>
+                
               </div>
               <div>
                 <mat-form-field>
