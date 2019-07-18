@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
           this.authService.setUser(data);
           this.authService.setUserTokenToCookie(data.token)
           this.login.emit('login')
-          this.authService.isUserLoggedIn('/enrollment');
+          this.authService.isUserLoggedIn('/home');
 
         }
         else if(data.message){

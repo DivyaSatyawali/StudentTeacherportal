@@ -5,9 +5,9 @@
   </button>
   <span><a href="https://iosd.tech" class="logo"></a></span>
   <span class="spacer"></span>
-  <a class="link">Page 1</a>
-  <a class="link">Page 2</a>
-  <a class="link">Page 3</a>
+  <a class="link" *ngIf="route.snapshot && route.snapshot._routerState.url != '/'">Blogs</a>
+  <a class="link" *ngIf="route.snapshot && route.snapshot._routerState.url != '/'">CodeSprint</a>
+  <a class="link" *ngIf="route.snapshot && route.snapshot._routerState.url != '/'">Portal</a>
   <a class="button" *ngIf="route.snapshot && route.snapshot._routerState.url == '/'"  routerLink="/">Login</a>
   <a class="button" *ngIf="route.snapshot && route.snapshot._routerState.url != '/'" (click)="logout()">Logout</a>
 
@@ -20,12 +20,12 @@
     [opened]="!(isHandset$ | async)">
     <mat-nav-list>
 
-        <div (click)="showEnrollments()">
+        <div (click)="showEnrollments()" [ngClass]="{'active':in}">
             <a mat-list-item ><i class="fas fa-user-plus"></i><span style="margin-left: 9px"></span>
               Enrollment</a>
           </div>
           <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEnrollments}">
-            <a mat-list-item class="sublink" routerLink="/enrollment">
+            <a mat-list-item class="sublink" routerLink="/enrollment" routerLinkActive="active">
 
               
               <div style="margin-left: 10px">New Enrollments</div>
@@ -33,74 +33,74 @@
     
           </div>
           <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEnrollments}">
-              <a mat-list-item class="sublink" routerLink="/all-enrollment">
+              <a mat-list-item class="sublink" routerLink="/all-enrollment" routerLinkActive="active">
                 <div style="margin-left: 10px">All Enrollments</div>
               </a>
           </div>
      
 
 
-      <div (click)="showEvents()">
+      <div (click)="showEvents()" [ngClass]="{'active':in2}">
         <a mat-list-item><i class="far fa-calendar-alt"></i><span style="margin-left: 9px"></span>
           Event</a>
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEvents}">
-        <a mat-list-item class="sublink" routerLink="/event">
+        <a mat-list-item class="sublink" routerLinkActive="active" routerLink="/event">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Events</div>
         </a>
 
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEvents}">
-        <a class="sublink" mat-list-item routerLink="/addevent">
+        <a class="sublink" mat-list-item routerLinkActive="active" routerLink="/addevent">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Add Event</div>
         </a>
 
       </div>
-      <div (click)="showReimbursement()">
+      <div (click)="showReimbursement()" [ngClass]="{'active':in3}">
         <a mat-list-item><i class="fas fa-rupee-sign"></i> <span style="margin-left: 9px"></span>Reimbursement</a>
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenReimbursement}">
-        <a mat-list-item class="sublink" routerLink="/apply">
+        <a mat-list-item class="sublink" routerLinkActive="active" routerLink="/apply">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Apply</div>
         </a>
 
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenReimbursement}">
-        <a class="sublink" mat-list-item routerLink="/track">
+        <a class="sublink" mat-list-item routerLinkActive="active" routerLink="/track">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Track</div>
         </a>
 
       </div>
-      <div (click)="showEResources()">
+      <div (click)="showEResources()" [ngClass]="{'active':in4}">
         <a mat-list-item ><i class="far fa-file"></i> <span style="margin-left: 9px"> </span> E-resource
           portal upload</a>
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}">
-        <a mat-list-item class="sublink" routerLink="/lectures">
+        <a mat-list-item class="sublink" routerLinkActive="active" routerLink="/lectures">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Lectures</div>
         </a>
 
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}">
-        <a mat-list-item class="sublink" routerLink="/modules">
+        <a mat-list-item class="sublink" routerLinkActive="active" routerLink="/modules">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Modules</div>
         </a>
 
       </div>
       <div class="dropdown-item" [ngClass]="{'hidden-dropdown':hiddenEResources}">
-        <a mat-list-item class="sublink" routerLink="/assignments">
+        <a mat-list-item class="sublink" routerLinkActive="active" routerLink="/assignments">
           <div><i class="fas fa-money-check-alt"></i></div>
           <div style="margin-left: 10px">Assignments</div>
         </a>
 
       </div>
-      <a mat-list-item routerLink="/star-performer"><i class="fas fa-star"></i><span style="margin-left: 9px"></span> Star performer of
+      <a mat-list-item (click)="star()" [ngClass]="{'active':in5}"routerLink="/star-performer"><i class="fas fa-star"></i><span style="margin-left: 9px"></span> Star performer of
         the month</a>
     </mat-nav-list>
   </mat-sidenav>

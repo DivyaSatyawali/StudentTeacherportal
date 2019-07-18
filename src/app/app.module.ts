@@ -21,7 +21,7 @@ import { MatButtonModule ,
          MatChipsModule,
          MatSnackBarModule,
          MatDialogModule,
-         MatIconModule,
+         MatIconModule
          
         } from '@angular/material';
 
@@ -48,6 +48,7 @@ import { StarPerformerComponent } from './components/star-performer/star-perform
 import { RoleChangeWarningComponent } from './components/form/all-enrollments/role-change-warning/role-change-warning.component';
 import { DeleteModelComponent } from './components/event/delete-model/delete-model.component';
 import { MissionService } from './services/e.service';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   
   declarations: [
@@ -67,7 +68,8 @@ import { MissionService } from './services/e.service';
     TrackDetailsComponent,
     StarPerformerComponent,
     RoleChangeWarningComponent,
-    DeleteModelComponent
+    DeleteModelComponent,
+    HomeComponent
     
   ],
   imports: [

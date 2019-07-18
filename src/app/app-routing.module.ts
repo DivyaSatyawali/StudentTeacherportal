@@ -11,9 +11,10 @@ import { AssignmentsComponent } from './components/eresources/assignments/assign
 import { AddEventComponent } from './components/event/add-event/add-event.component';
 import { AllEnrollmentsComponent } from './components/form/all-enrollments/all-enrollments.component'
 import { StarPerformerComponent } from './components/star-performer/star-performer.component';
-
+import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
 {path:'',component:LoginComponent},
+{path:'home',component:HomeComponent},
   {path:'event',component:EventComponent},
   {path:'enrollment',component:FormComponent},
   {path:'apply',component:ApplyComponent},

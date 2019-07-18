@@ -25,8 +25,12 @@ export class MainNavComponent implements OnInit {
   hiddenEResources=true;
 hiddenEvents = true;
 hiddenEnrollments = true;
-userLoggedIn = false
-
+userLoggedIn = false;
+in=false;
+in2=false;
+in3=false;
+in4=false;
+in5=false;
 // href = this.route.snapshot._routerState.url;
 ngOnInit(){
   // this.href = this.route.url;
@@ -35,18 +39,55 @@ ngOnInit(){
 }
 
   showEvents(){
+    if(this.hiddenEvents)
+      this.in2=true;
+    else
+      this.in2=false;
     this.hiddenEvents =  !this.hiddenEvents;
-
+    this.in = false;
+    this.in3 = false;
+    this.in4 = false;
+    this.in5 = false;
   }
   showEnrollments(){
+    if(this.hiddenEnrollments)
+      this.in=true;
+    else
+      this.in = false;
     this.hiddenEnrollments =  !this.hiddenEnrollments;
-
+    this.in2 = false;
+    this.in3 = false;
+    this.in4 = false;
+    this.in5 = false;
   }
   showReimbursement(){
-    this.hiddenReimbursement=  !this.hiddenReimbursement
+    if(this.hiddenReimbursement)
+      this.in3=true;
+    else
+      this.in3=false;
+    this.hiddenReimbursement=  !this.hiddenReimbursement;
+    this.in = false;
+    this.in2 = false;
+    this.in4 = false;
+    this.in5 = false;
   }
   showEResources(){
-    this.hiddenEResources = !this.hiddenEResources
+    if(this.hiddenEResources)
+      this.in4=true;
+    else
+      this.in4=false;
+    this.hiddenEResources = !this.hiddenEResources;
+    this.in = false;
+    this.in2 = false;
+    this.in3 = false;
+    this.in5 = false;
+  }
+  star(){
+    this.in = false;
+    this.in2 = false;
+    this.in3 = false;
+    this.in4 = false;
+    this.in5 = true;
   }
   isUserLoggedIn(){
     console.log('logging ins')
