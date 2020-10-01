@@ -19,11 +19,11 @@ export class AssignmentsService {
 
   constructor(private http:HttpClient,private authService:AuthService) { }
   convertObjectToFormData(form){
-    const FS = new FormData();
+    const fs = new Form();
     for(let key in form){
-        FS.append(key,form[key])
+      fs.append(key,form[key])
     }
-    return FS
+    return fs
   }
   addAssignment(form):Observable<ASSIGNMENT>{
     const data = this.convertObjectToFormData(form);
