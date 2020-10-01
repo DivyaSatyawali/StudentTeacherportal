@@ -47,7 +47,8 @@
 .card__description{
 	padding: 1rem 0;
 	font-size: 14px;
-	color:rgb(159, 159, 159)
+	color:rgb(159, 159, 159);
+	word-wrap:break-word;
 }
 
 .event__type{
